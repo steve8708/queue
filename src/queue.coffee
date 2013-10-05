@@ -1,7 +1,7 @@
 # Queue - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 queue =
-  VERSION: '0.0.2'
+  VERSION: '0.0.2' # This gets updated by grunt during builds
 
   forceSync: false
   _kill: false

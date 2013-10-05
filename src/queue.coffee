@@ -1,7 +1,7 @@
 # Queue - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 queue =
-  VERSION: '0.0.1'
+  VERSION: '0.0.2'
 
   forceSync: false
   _kill: false
@@ -35,7 +35,7 @@ queue =
         queue = @updateQueue
         @updateQueue = null
 
-        for updateList, time of queue, =>
+        for time, updateList of queue
           do (updateList, time) =>
             @setTimeout time, =>
               for options in updateList

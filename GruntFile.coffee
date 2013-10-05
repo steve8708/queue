@@ -115,14 +115,13 @@ module.exports = (grunt) ->
           questions: [
             type: 'input'
             name: 'Confirm'
-            message:
-              'This is OFFICIAL deployment, are you sure you want to continue? y/n'
+            message: 'This is OFFICIAL deployment, are you sure you want
+              to continue? y/n'
             validate: (input) -> validatePrompt input
           ,
             type: 'input'
             name: 'Check committed'
-            message:
-              "And you are 100,000% certain you have commited all files?? y/n"
+            message: "And you are 100% certain you have commited all files? y/n"
             validate: (input) ->
               validatePrompt input
               grunt.log.writeln 'OK, proceeding to release!'

@@ -116,7 +116,7 @@ module.exports = (grunt) ->
             type: 'input'
             name: 'Confirm'
             message:
-              'This is LIVE deployment, are you sure you want to continue? y/n'
+              'This is OFFICIAL deployment, are you sure you want to continue? y/n'
             validate: (input) -> validatePrompt input
           ,
             type: 'input'
@@ -150,6 +150,7 @@ module.exports = (grunt) ->
     'bump-only:patch'
     'replace:configVersion'
     'release:build'
+    'bump-commit'
   ]
 
   grunt.registerTask 'release:minor',   [
@@ -157,6 +158,7 @@ module.exports = (grunt) ->
     'bump-only:minor'
     'replace:configVersion'
     'release:build'
+    'bump-commit'
   ]
 
   grunt.registerTask 'release:major',   [
@@ -164,6 +166,7 @@ module.exports = (grunt) ->
     'bump-only:major'
     'replace:configVersion'
     'release:build'
+    'bump-commit'
   ]
 
   grunt.registerTask 'test-watch',      [ 'karma:watch' ]

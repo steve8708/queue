@@ -115,8 +115,8 @@ module.exports = (grunt) ->
           questions: [
             type: 'input'
             name: 'Confirm'
-            message: 'This is OFFICIAL deployment, are you sure you want
-              to continue? y/n'
+            message: 'This is OFFICIAL deployment, are you sure ' +
+              'you want to continue? y/n'
             validate: (input) -> validatePrompt input
           ,
             type: 'input'

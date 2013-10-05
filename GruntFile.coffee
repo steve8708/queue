@@ -33,7 +33,6 @@ module.exports = (grunt) ->
           'queue.js': [ 'src/queue.coffee' ]
 
     coffeelint:
-      options:
       src: [ 'src/**/*.coffee', 'GruntFile.coffee', 'tasks/*.coffee' ]
 
     watch:
@@ -42,11 +41,7 @@ module.exports = (grunt) ->
         tasks: [ 'coffeelint', 'coffee' ]
 
       lint:
-        files: [
-          'GruntFile.coffee'
-          'tasks/**/*.coffee'
-          'test/**/*.coffee'
-        ]
+        files: [ 'GruntFile.coffee', 'tasks/**/*.coffee', 'test/**/*.coffee' ]
         tasks: [ 'coffeelint' ]
 
     uglify:
@@ -155,7 +150,6 @@ module.exports = (grunt) ->
     'bump-only:patch'
     'replace:configVersion'
     'release:build'
-    'release:upload'
   ]
 
   grunt.registerTask 'release:minor',   [
@@ -163,7 +157,6 @@ module.exports = (grunt) ->
     'bump-only:minor'
     'replace:configVersion'
     'release:build'
-    'release:upload'
   ]
 
   grunt.registerTask 'release:major',   [
@@ -171,14 +164,12 @@ module.exports = (grunt) ->
     'bump-only:major'
     'replace:configVersion'
     'release:build'
-    'release:upload'
   ]
 
   grunt.registerTask 'test-watch',      [ 'karma:watch' ]
   grunt.registerTask 'test',            [ 'karma:single' ]
   grunt.registerTask 'release:build',   [ 'build:release' ]
   grunt.registerTask 'watch-serve',     [ 'connect', 'watch' ]
-  grunt.registerTask 'release:upload',  [ 'bump-commit' ]
   grunt.registerTask 'release:confirm', [ 'prompt', 'shell:checkUnstaged']
 
 

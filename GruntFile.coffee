@@ -75,7 +75,8 @@ module.exports = (grunt) ->
         overwrite: true
         replacements: [
           from: /^/
-          to: -> "/* queue.js v#{ packageVersion() } */ \n"
+          to: ->
+            "/* queue.js v#{ packageVersion() } (coffeescript output) */ \n\n"
         ]
 
       minJS:
